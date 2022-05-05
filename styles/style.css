@@ -136,7 +136,7 @@ h3 {
   min-width: 784px;
 }
 
-.span-accent {
+.two-columns__span-accent {
   font-weight: 700;
 }
 
@@ -183,14 +183,10 @@ h3 {
   font-weight: bold;
 }
 
-.table-text {
+.table__text {
   line-height: 1.2;
   font-size: 18px;
   font-weight: light;
-  margin-bottom: 20px;
-}
-
-.table_text_second-paragraph {
   margin-top: 20px;
 }
 
@@ -298,7 +294,7 @@ h3 {
   padding-top: 60px;
 }
 
-.footer_columns {
+.footer__columns {
   display: flex;
   background-color: #1f1f1f;
   flex-direction: row;
@@ -306,21 +302,22 @@ h3 {
   width: 90%;
 }
 
-.footer_column_content_copyright {
+.footer__column_content_copyright {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   flex-basis: 711px;
 }
 
-.footer_column_content_info {
+.footer__column_content_info {
   display: flex;
   flex-direction: column;
 }
 
-.footer_column_content_social {
+.footer__column_content_social {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
 }
 
 .logo_place_footer {
