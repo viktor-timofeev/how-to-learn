@@ -1,19 +1,3 @@
-p {
-  margin: 0;
-}
-
-h1 {
-  margin: 0;
-}
-
-h2 {
-  margin: 0;
-}
-
-h3 {
-  margin: 0;
-}
-
 .page {
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
@@ -28,9 +12,11 @@ h3 {
 .header {
   min-height: 600px;
   max-height: 756px;
+  height: 100vh;
+  /* это указание высоты было в коде изначально, его не я вставил, без него header не принимает нужно высоты, как по брифу */
   background-color: #f2f2f2;
   position: relative;
-  overflow: hidden;
+  display: flex;
 }
 
 .logo {
@@ -47,17 +33,15 @@ h3 {
 }
 
 .header__title {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 64px;
   min-height: 568px;
   max-width: 730px;
   font-weight: 700;
   font-size: 102px;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  left: 64px;
   z-index: 3;
   line-height: 96px;
-  margin: 0;
 }
 
 .header__subtitle {
@@ -69,18 +53,22 @@ h3 {
   line-height: 25px;
   font-size: 18px;
   margin: 0;
+  font-weight: normal;
 }
 
 .header__main-illustration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
   height: 608px;
   width: 765px;
   background-image: url(../images/header-image.png);
-  position: absolute;
-  bottom: 0;
-  right: -53px;
   z-index: 1;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: right;
 }
 
 .header__square-pic {
@@ -105,34 +93,41 @@ h3 {
 .two-columns {
   display: flex;
   flex-direction: row;
+  width: 80%;
   margin: auto;
   justify-content: space-between;
-  width: 80%;
   padding-bottom: 100px;
   padding-top: 100px;
 }
 
 .two-columns__brief {
   display: block;
-  width: 500px;
+  width: 175px;
   color: #2f80ed;
   line-height: 1.2;
   font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 
 .two-columns__main-text {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 80%;
+  min-width: 784px;
 }
 
 .two-columns__paragraph {
   line-height: 34px;
   font-size: 24px;
   text-align: justify;
+  margin-top: 0;
   margin-bottom: 30px;
-  width: 80%;
-  min-width: 784px;
+  font-weight: normal;
 }
 
 .two-columns__span-accent {
@@ -141,7 +136,6 @@ h3 {
 
 .digits {
   position: relative;
-  padding-bottom: 100px;
 }
 
 .section-title {
@@ -155,11 +149,11 @@ h3 {
 
 .section-subtitle {
   max-width: 60%;
-  margin: auto;
+  margin: 0 auto 0;
   text-align: center;
   line-height: 34px;
   font-size: 24px;
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 .table {
@@ -167,7 +161,7 @@ h3 {
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1100px;
-  margin: 60px auto 100px;
+  margin: 0 auto 100px;
 }
 
 .table__cell {
@@ -176,7 +170,7 @@ h3 {
 }
 
 .table__heading {
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
@@ -185,11 +179,12 @@ h3 {
 .table__text {
   line-height: 1.2;
   font-size: 18px;
-  font-weight: light;
-  margin-top: 20px;
+  font-weight: normal;
+  margin: 20px auto 0;
 }
 
 .feynman {
+  box-sizing: border-box;
   background-color: #f2f2f2;
   background-image: url(../images/feynman.png);
   background-position: bottom left;
@@ -212,7 +207,7 @@ h3 {
 .feynman__subtitle {
   line-height: 51px;
   font-size: 36px;
-  font-weight: lighter;
+  font-weight: normal;
   margin: 70px auto 0;
   text-align: center;
 }
@@ -220,9 +215,9 @@ h3 {
 .feynman__link {
   line-height: 51px;
   font-size: 36px;
-  font-weight: lighter;
+  font-weight: normal;
   position: absolute;
-  top: center;
+  top: 50%;
   right: 48px;
 }
 
@@ -231,7 +226,6 @@ h3 {
   overflow: hidden;
   position: relative;
   padding-bottom: 90px;
-  padding-top: 90px;
 }
 
 .kaufman__triangle {
@@ -241,17 +235,20 @@ h3 {
   background-repeat: no-repeat;
   position: absolute;
   right: -210px;
+  top: 0;
   background-size: contain;
+  z-index: 1;
 }
 
 .section-title_theme_dark {
   color: white;
-  z-index: 2;
+  position: relative;
+  z-index: 3;
+  margin-top: 90px;
 }
 
 .section-subtitle_theme_dark {
   color: white;
-  z-index: 2;
 }
 
 .table_theme_dark {
@@ -259,7 +256,7 @@ h3 {
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1100px;
-  margin: 60px auto 100px;
+  margin: 0 auto 90px;
   z-index: 2;
 }
 
@@ -282,29 +279,33 @@ h3 {
 .table-text_theme_dark {
   line-height: 1.2;
   font-size: 18px;
-  font-weight: light;
+  font-weight: normal;
   margin-bottom: 20px;
   z-index: 2;
 }
 
 .footer {
+
+  box-sizing: border-box;
   background-color: #1f1f1f;
-  padding-bottom: 40px;
-  padding-top: 60px;
+
 }
 
 .footer__columns {
   display: flex;
-  background-color: #1f1f1f;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 90%;
+  margin: auto;
+  min-height: 350px;
+  padding-bottom: 40px;
+  padding-top: 60px;
 }
 
 .footer__column_content_copyright {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
   flex-basis: 711px;
 }
 
@@ -324,10 +325,12 @@ h3 {
 }
 
 .footer__author {
+  display: flex;
   line-height: 25px;
   font-size: 18px;
-  font-weight: lighter;
+  font-weight: normal;
   color: white;
+  margin-top: 18px;
 }
 
 .footer__column-heading {
@@ -336,6 +339,8 @@ h3 {
   font-weight: bold;
   color: white;
   margin-bottom: 20px;
+  margin-top: 0;
+  text-align: left;
 }
 
 .footer__column-links {
@@ -346,9 +351,10 @@ h3 {
 .footer__column-link {
   line-height: 30px;
   font-size: 18px;
-  font-weight: lighter;
+  font-weight: normal;
   color: white;
   text-decoration: none;
+  text-align: left;
 }
 
 .footer__column-link:hover {
@@ -358,4 +364,5 @@ h3 {
 .footer__social-icon {
   height: 16px;
   width: 16px;
+  margin-right: 20px;
 }
