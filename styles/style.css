@@ -13,7 +13,6 @@
   min-height: 600px;
   max-height: 756px;
   height: 100vh;
-  /* это указание высоты было в коде изначально, его не я вставил, без него header не принимает нужно высоты, как по брифу */
   background-color: #f2f2f2;
   position: relative;
   display: flex;
@@ -36,7 +35,6 @@
   display: flex;
   align-items: center;
   margin: 0 0 0 64px;
-  min-height: 568px;
   max-width: 730px;
   font-weight: 700;
   font-size: 102px;
@@ -130,12 +128,17 @@
   font-weight: normal;
 }
 
+.two-columns__paragraph:last-of-type {
+  margin-bottom: 0;
+}
+
 .two-columns__span-accent {
   font-weight: 700;
 }
 
 .digits {
   position: relative;
+  padding-bottom: 100px;
 }
 
 .section-title {
@@ -161,7 +164,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1100px;
-  margin: 0 auto 100px;
+  margin: 0 auto 0;
 }
 
 .table__cell {
@@ -256,7 +259,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1100px;
-  margin: 0 auto 90px;
+  margin: 0 auto 0;
   z-index: 2;
 }
 
@@ -276,7 +279,7 @@
   z-index: 2;
 }
 
-.table-text_theme_dark {
+.table__text_theme_dark {
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
@@ -292,6 +295,7 @@
 }
 
 .footer__columns {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -331,6 +335,7 @@
   font-weight: normal;
   color: white;
   margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 .footer__column-heading {
